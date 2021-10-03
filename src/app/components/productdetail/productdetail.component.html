@@ -1,0 +1,19 @@
+<!-- <div class="grid-container">
+    <h1>ชื่อสินค้า {{data.productName}}</h1>
+    <span>1350</span>
+    <span>รายละเอียดสินค้า</span>
+</div> -->
+<mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title >{{data.productName}}</mat-card-title>
+      <mat-card-subtitle>{{data.price}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" style="width: 500px;height: 350px;" alt="Photo of a Shiba Inu">
+    <mat-card-content >
+      <p>
+        {{data.detail}}
+      </p>
+    </mat-card-content>
+  </mat-card>
+  

@@ -1,0 +1,35 @@
+<div class="grid-container">
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">productcode</th>
+      <th scope="col">productname</th>
+      <th scope="col">price</th>
+      <th scope="col">img</th>
+      <th scope="col">detail</th>
+      <th scope="col">edit</th>
+      <th scope="col">detail</th>
+      <th scope="col">delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of list" >
+      <th scope="row">1</th>
+      <td>{{ item.id }} </td>
+      <td>{{ item.productName }} </td>
+      <td>{{ item.price }} </td>
+      <td>{{ item.img }} </td>
+      <td>{{ item.detail }} </td>
+      <td>
+        <a  href="edit-product/{{item}}"><span style="color:back;cursor: pointer;"><mat-icon aria-hidden="false" aria-label="Example home icon">add</mat-icon></span></a>
+        <!-- <label class="form-check-label" (click)="update(item)" >edit</label> -->
+      </td>
+      <td><label class="form-check-label" (click)="openDialog(item)"  style="cursor: pointer;color: seagreen;"><mat-icon aria-hidden="false" aria-label="Example home icon">search</mat-icon></label></td>
+      <td><label class="form-check-label" (click)="remove(item)" style="cursor: pointer;color: red;"><mat-icon aria-hidden="false" aria-label="Example home icon">delete</mat-icon></label></td>
+      
+      <!-- <td><input type="checkbox" class="form-check-input" id="exampleCheck1"></td> -->
+    </tr>
+  </tbody>
+</table>
+</div>
