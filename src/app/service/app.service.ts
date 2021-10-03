@@ -20,15 +20,25 @@ export class AppService {
   addNewList(list: ProductModel): void {
     console.log(list);
     let rawDatas  : ProductModel[] = [];
-    //sessionStorage.setItem("items", JSON.stringify(testArray));
-    //sessionStorage.setItem("items", JSON.stringify(rawDatas));
-
+   
     rawDatas= JSON.parse(sessionStorage.getItem("items") || '{}');
+    if(rawDatas.length == undefined){
+      let rawDatas  : ProductModel[] = [];
+      sessionStorage.setItem("items", JSON.stringify(rawDatas));
+      rawDatas= JSON.parse(sessionStorage.getItem("items") || '{}');
+      rawDatas.push(list);
+      sessionStorage.setItem("items", JSON.stringify(rawDatas));
+    }else{
+      rawDatas= JSON.parse(sessionStorage.getItem("items") || '{}');
+      rawDatas.push(list);
+      sessionStorage.setItem("items", JSON.stringify(rawDatas));
+      console.log(rawDatas);
+    }
+    //rawDatas= JSON.parse(sessionStorage.getItem("items") || '{}');
 
-    //rawDatas =  sessionStorage.getItem("items") as ProductModel[];
-    rawDatas.push(list);
-    sessionStorage.setItem("items", JSON.stringify(rawDatas));
-    console.log(rawDatas);
+    // rawDatas.push(list);
+    // sessionStorage.setItem("items", JSON.stringify(rawDatas));
+   
     //sessionStorage.setItem("items",rawDatas);
 }
 removeList(list: ProductModel): void {
